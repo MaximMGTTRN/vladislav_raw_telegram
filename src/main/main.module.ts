@@ -6,11 +6,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
   imports: [
-    HttpModule,
     TypeOrmModule.forFeature([]),
   ],
   exports: [MainService],
   controllers: [MainController],
   providers: [MainService],
 })
-export class MainModule {}
+export class MainModule { }
