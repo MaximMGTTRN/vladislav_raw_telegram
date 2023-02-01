@@ -35,9 +35,9 @@ services:
     ports:
       - ${TYPEORM_PORT}:${TYPEORM_PORT}
 
-  # redis:
-    # image: redis:latest
-    # volumes:
-    #   - ./redis:/data
-    # ports:
-    #   - 6379:6379
+  redis:
+    image: redis:latest
+    volumes:
+      - ./redis:/data
+    ports:
+      - 6379:6379

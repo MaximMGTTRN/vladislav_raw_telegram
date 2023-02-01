@@ -6,6 +6,7 @@ import connection from './db.connection';
 // @ts-ignore
 const AppDataSource = new DataSource({
   ...connection,
+  synchronize: false,
   entities: [__dirname + '/../**/*.entity{.js,.ts}'],
   migrations: ['dist/**/migrations/*.js'],
   namingStrategy: new SnakeNamingStrategy(),
