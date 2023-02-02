@@ -4,6 +4,7 @@ import { Context } from '../interfaces/context.interface';
 import { HELLO_SCENE_ID } from '../app.constants';
 import { UpdateType } from '../common/decorators/update-type.decorator';
 
+
 @Update()
 export class GreeterUpdate {
   @Start()

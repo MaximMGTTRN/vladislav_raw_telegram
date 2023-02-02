@@ -2,12 +2,13 @@ import { CacheModule, forwardRef, Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
+import { TelegrafModule } from 'nestjs-telegraf';
+import * as redisStore from 'cache-manager-redis-store';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { TelegrafModule } from 'nestjs-telegraf';
 import { sessionMiddleware } from './middleware/session.middleware';
-import * as redisStore from 'cache-manager-redis-store';
 import { CoreModule } from './core/core.module';
+
 
 @Module({
   imports: [
@@ -25,7 +26,7 @@ import { CoreModule } from './core/core.module';
       logging: true,
       migrationsTableName: 'migrations',
       namingStrategy: new SnakeNamingStrategy(),
-      entities: [__dirname + '/../**/*.entity{.js,.ts}'],
+      entities: [`${__dirname}/../**/*.entity{.js,.ts}`],
       migrations: ['dist/**/migrations/*.js'],
     }),
     CacheModule.register({
@@ -33,7 +34,6 @@ import { CoreModule } from './core/core.module';
       host: process.env.REDIS_HOST,
       port: parseInt(process.env.REDIS_PORT),
       ttl: 3600,
-      max: 10,
       isGlobal: true,
     }),
     TelegrafModule.forRoot({
@@ -42,6 +42,7 @@ import { CoreModule } from './core/core.module';
       middlewares: [sessionMiddleware],
     }),
     CoreModule,
+
     // SchedulerModule,
   ],
   controllers: [AppController],

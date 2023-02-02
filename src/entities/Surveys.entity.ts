@@ -8,32 +8,33 @@ import {
 } from 'typeorm';
 import { Person } from './Person.entity';
 
+
 @Entity('survey')
 export class Survey extends BaseEntity {
   @PrimaryGeneratedColumn()
-  public id: number;
+  id: number;
 
   @Column({ nullable: false })
-  public realName: string
+  realName: string;
 
   @Column({ nullable: true })
-  public age?: number
+  age?: number;
 
   @Column({ nullable: true })
-  public livingPlace?: string
+  livingPlace?: string;
 
   @Column({ nullable: true })
-  public prefer?: string
+  prefer?: string;
 
   @Column({ nullable: true })
-  public webLink?: string
+  webLink?: string;
 
   @Column({ nullable: true })
-  public comment?: string
+  comment?: string;
 
   @Column({ nullable: false })
-  public tgUsernameForConnect: string
+  tgUsernameForConnect: string;
 
-  @ManyToOne(() => Person, person => person.id)
-  public person: Person;
+  @ManyToOne(() => Person, (person) => person.id)
+  person: Person;
 }
