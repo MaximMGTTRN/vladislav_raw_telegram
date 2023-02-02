@@ -7,12 +7,13 @@ import {
   Command,
 } from 'nestjs-telegraf';
 import { Telegraf } from 'telegraf';
-import { CoreService } from './core.service';
 import { GreeterBotName } from '../app.constants';
 import { Context } from '../interfaces/context.interface';
 import { ResponseTimeInterceptor } from '../common/interceptors/response-time.interceptor';
 import { AdminGuard } from '../common/guards/admin.guard';
 import { TelegrafExceptionFilter } from '../common/filters/telegraf-exception.filter';
+import { CoreService } from './core.service';
+
 
 @Update()
 @UseInterceptors(ResponseTimeInterceptor)
@@ -26,7 +27,7 @@ export class CoreUpdate {
 
   @Start()
   async onStart(ctx: Context): Promise<void> {
-    await this.startingService.startBot(ctx)
+    await this.startingService.startBot(ctx);
   }
 
   @Help()

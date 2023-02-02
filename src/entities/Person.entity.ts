@@ -7,29 +7,30 @@ import {
 } from 'typeorm';
 import { Survey } from './Surveys.entity';
 
+
 @Entity('person')
 export class Person extends BaseEntity {
   @PrimaryGeneratedColumn()
-  public id: number;
+  id: number;
 
   @Column({ nullable: false })
-  public tgId: string;
+  tgId: string;
 
   @Column({ nullable: false })
-  public createdAt: Date;
+  createdAt: Date;
 
   @Column({ nullable: true })
-  public updatedAt?: Date;
+  updatedAt?: Date;
 
   @Column({ nullable: true })
-  public personName?: string
+  personName?: string;
 
   @Column({ nullable: false })
-  public tgUsername: string
+  tgUsername: string;
 
   @Column({ nullable: true })
-  public isBot?: boolean
+  isBot?: boolean;
 
-  @OneToMany(() => Survey, survey => survey.id)
-  public surveys: Survey[];
+  @OneToMany(() => Survey, (survey) => survey.id)
+  surveys: Survey[];
 }
