@@ -6,4 +6,5 @@ export enum SurveyAnswersEnum {
   webLink = 'Ссылка на соцсеть',
   comment = 'Комментарий',
   tgUsernameForConnect = 'Телеграм',
+  id = 'Номер анкеты',
 }

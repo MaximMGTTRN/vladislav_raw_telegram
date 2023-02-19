@@ -25,8 +25,8 @@ export class Person extends BaseEntity {
   @Column({ nullable: true })
   personName?: string;
 
-  @Column({ nullable: false })
-  tgUsername: string;
+  @Column({ nullable: true })
+  tgUsername?: string;
 
   @Column({ nullable: true })
   isBot?: boolean;

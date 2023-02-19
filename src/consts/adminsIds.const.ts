@@ -1,0 +1,4 @@
+export const ADMINS_IDS = {
+  VLAD_ID: 656623769,
+  MAKS_ID: 173071005,
+};

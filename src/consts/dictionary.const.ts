@@ -6,6 +6,10 @@ export const BUTTONS_TEXT = {
   LEVAE_SURVEY: 'Думаю мне надо еще подумать над заявкой...',
   FINISH_SURVEY: 'Отлично, это все про меня!',
   FINISH_RELOAD_SURVEY: 'Что то все перепуталось, попробуем еще раз',
+  GET_SURVEYS_ADMIN: 'Получить анкеты',
+  SEND_MESSAGE_ADMIN: 'Отправить всем собщение',
+  TO_MAIN_MENU_ADMIN: 'Вернуться',
+
 };
 
 export const SURVEY_SCENE_REPLIES = {
@@ -16,7 +20,7 @@ export const SURVEY_SCENE_REPLIES = {
   SURVEY_PROBLEM_REPLY: 'Возникли трудности, попробуйте начать заново...',
   STAGE_1_REPLY: (userName) => `${userName}, приятно познакомиться, сколько тебе лет?`,
   STAGE_2_REPLY: 'Супер, что на счет локации? В каком городе хочешь пофоткаться?',
-  STAGE_2_WARNING_REPLY: 'Пожалуйста напиши возраст числом',
+  STAGE_2_WARNING_REPLY: 'Пожалуйста напиши свой реальный возраст числом',
   STAGE_3_REPLY: 'Крутое местечко! Может у тебя есть предпочтения по стилистке фотосъемки?',
   STAGE_4_REPLY: 'Слушай, а у тебя крутые идеи! Может оставшь ссылку на свои соцсети?',
   STAGE_5_REPLY: 'Обязательно к тебе загляну, если хочешь что то уточнить, самое время:',
@@ -33,4 +37,8 @@ export const SURVEY_SCENE_REPLIES = {
 export const STARTING_REPLIES = {
   GREET_NEW_USER: (userName) => `${userName}, рад приветствовать тебя!`,
   GREET_OLD_USER: (userName) => `${userName}, давно не виделись, рад снова тебя приветствовать!`,
+};
+
+export const ADMIN_COMMAND = {
+  EXPORT_FILE_NAME: (dateToday) => `Анкеты_за_${dateToday}.xlsx`,
 };

@@ -10,6 +10,9 @@ const {
   LEVAE_SURVEY,
   FINISH_SURVEY,
   FINISH_RELOAD_SURVEY,
+  GET_SURVEYS_ADMIN,
+  SEND_MESSAGE_ADMIN,
+  TO_MAIN_MENU_ADMIN,
 } = BUTTONS_TEXT;
 
 export function startingButtions() {
@@ -54,6 +57,19 @@ export function surveyFinalButtons() {
       Markup.button.callback(FINISH_RELOAD_SURVEY, 'finishReloadSurvey'),
       Markup.button.callback(LEVAE_SURVEY, 'leaveSurvey'),
     ],
+  ).resize();
+}
+
+export function adminButtons() {
+  return Markup.keyboard(
+    [
+      Markup.button.callback(GET_SURVEYS_ADMIN, 'getSurveysAdmin'),
+      Markup.button.callback(SEND_MESSAGE_ADMIN, 'sendMessageAdmin'),
+      Markup.button.callback(TO_MAIN_MENU_ADMIN, 'leaveAdmin'),
+    ],
+    {
+      columns: 2,
+    },
   ).resize();
 }
 

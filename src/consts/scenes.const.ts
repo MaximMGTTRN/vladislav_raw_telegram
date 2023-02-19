@@ -1,3 +1,4 @@
 export const SCENES = {
   SURVEY_SCENE: 'SURVEY_SCENE',
+  ADMIN_SCENE: 'ADMIN_SCENE',
 };

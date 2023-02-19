@@ -5,7 +5,7 @@ import { Context } from '../../interfaces/context.interface';
 
 @Injectable()
 export class AdminGuard implements CanActivate {
-  private readonly ADMIN_IDS = [173071005];
+  private readonly ADMIN_IDS = [173071005, 656623769];
 
   canActivate(context: ExecutionContext): boolean {
     const ctx = TelegrafExecutionContext.create(context);
