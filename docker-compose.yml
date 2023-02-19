@@ -13,15 +13,17 @@ services:
       - ./:/app
       - /app/node_modules
     depends_on:
-      - redis-vlad-tg
-      - db-vlad-tg
+      - dbtgvlad
+      - redistgvlad
+    # links:
+    #   - db
     ports:
       - "3000:3000"
     command: npm run start
     restart: always
 
-  db-vlad-tg:
-    container_name: tg-vlad-db
+  dbtgvlad:
+    # container_name: tg-vlad-db
     image: postgres:14-alpine
     restart: always
     environment:
@@ -34,7 +36,7 @@ services:
     ports:
       - ${TYPEORM_PORT}:${TYPEORM_PORT}
 
-  redis-vlad-tg:
+  redistgvlad:
     image: redis:latest
     volumes:
       - ./redis:/data
