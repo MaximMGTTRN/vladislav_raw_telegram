@@ -6,6 +6,8 @@ COPY package.json ./
 
 RUN yarn install
 
+RUN npm run migrate:up
+
 COPY . .
 
 RUN npm run build
