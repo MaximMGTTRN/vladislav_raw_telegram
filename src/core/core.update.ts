@@ -35,8 +35,6 @@ export class CoreUpdate {
 
   @Start()
   async onStart(ctx: Context): Promise<void> {
-    console.log(ctx.from.id);
-
     await this.coreService.startBot(ctx);
   }
 

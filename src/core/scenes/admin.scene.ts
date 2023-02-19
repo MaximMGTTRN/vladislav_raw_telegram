@@ -134,9 +134,6 @@ export class AdminScene {
     @Ctx() ctx: Context,
   ) {
     try {
-      console.log(ctx.message);
-
-
       await this.cacheManager.set('message', ctx.message);
       await ctx.reply('Перепроверь сообщение и нажми на кнопку', messaeToAllInlineButtons());
     } catch (e) {

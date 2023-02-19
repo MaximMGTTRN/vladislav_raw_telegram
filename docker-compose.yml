@@ -14,11 +14,10 @@ services:
       - /app/node_modules
     depends_on:
       - db
-    # links:
-    #   - db
+      - redis
     ports:
       - "3000:3000"
-    command: npm run start:dev
+    command: npm run start
     restart: always
 
   db:
