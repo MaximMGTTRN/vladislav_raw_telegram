@@ -8,10 +8,8 @@ RUN yarn install
 
 COPY . .
 
-RUN npm run migrate:up
-
-COPY . .
-
 RUN npm run build
+
+RUN npm run migrate:up
 
 CMD [ "node", "dist/src/main.js" ]
