@@ -12,33 +12,32 @@ services:
     volumes:
       - ./:/app
       - /app/node_modules
-    depends_on:
-      - dbtgvlad
-      - redistgvlad
+    # depends_on:
+    #   - dbtgvlad
+    #   - redistgvlad
     # links:
     #   - db
     ports:
       - "3000:3000"
     command: npm run start
     restart: always
+  # dbtgvlad:
+  #   # container_name: tg-vlad-db
+  #   image: postgres:14-alpine
+  #   restart: always
+  #   environment:
+  #     - POSTGRES_USER=${TYPEORM_USERNAME}
+  #     - POSTGRES_PASSWORD=${TYPEORM_PASSWORD}
+  #     - POSTGRES_DB=${TYPEORM_DB}
+  #     - TZ=Europe/Moscow
+  #   volumes:
+  #     - ./pgdata:/var/lib/postgresql/data
+  #   ports:
+  #     - ${TYPEORM_PORT}:${TYPEORM_PORT}
 
-  dbtgvlad:
-    # container_name: tg-vlad-db
-    image: postgres:14-alpine
-    restart: always
-    environment:
-      - POSTGRES_USER=${TYPEORM_USERNAME}
-      - POSTGRES_PASSWORD=${TYPEORM_PASSWORD}
-      - POSTGRES_DB=${TYPEORM_DB}
-      - TZ=Europe/Moscow
-    volumes:
-      - ./pgdata:/var/lib/postgresql/data
-    ports:
-      - ${TYPEORM_PORT}:${TYPEORM_PORT}
-
-  redistgvlad:
-    image: redis:latest
-    volumes:
-      - ./redis:/data
-    ports:
-      - 6379:6379
+  # redistgvlad:
+  #   image: redis:latest
+  #   volumes:
+  #     - ./redis:/data
+  #   ports:
+  #     - 6379:6379

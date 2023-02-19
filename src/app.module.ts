@@ -17,11 +17,11 @@ import { CoreModule } from './core/core.module';
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'dbtgvlad',
+      host: 'dpg-cfp8r7arrk0fd9sfmrug-a',
       port: parseInt(process.env.TYPEORM_PORT),
-      username: process.env.TYPEORM_USERNAME,
+      username: 'dbtgvlad_user',
       password: process.env.TYPEORM_PASSWORD,
-      database: process.env.TYPEORM_DB,
+      database: 'dbtgvlad',
       synchronize: false,
       logging: true,
       migrationsTableName: 'migrations',
@@ -31,7 +31,7 @@ import { CoreModule } from './core/core.module';
     }),
     CacheModule.register({
       store: redisStore,
-      host: 'redistgvlad',
+      host: 'red-cfp8rsh4rebfdarujvjg',
       port: parseInt(process.env.REDIS_PORT),
       ttl: 3600,
       isGlobal: true,
