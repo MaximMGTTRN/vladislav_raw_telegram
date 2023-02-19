@@ -17,7 +17,7 @@ import { CoreModule } from './core/core.module';
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'db',
+      host: 'db-vlad-tg',
       port: parseInt(process.env.TYPEORM_PORT),
       username: process.env.TYPEORM_USERNAME,
       password: process.env.TYPEORM_PASSWORD,
@@ -31,7 +31,7 @@ import { CoreModule } from './core/core.module';
     }),
     CacheModule.register({
       store: redisStore,
-      host: 'redis',
+      host: 'redis-vlad-tg',
       port: parseInt(process.env.REDIS_PORT),
       ttl: 3600,
       isGlobal: true,
