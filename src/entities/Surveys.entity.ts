@@ -35,6 +35,9 @@ export class Survey extends BaseEntity {
   @Column({ nullable: false })
   tgUsernameForConnect: string;
 
+  @Column()
+  createdAt: Date;
+
   @ManyToOne(() => Person, (person) => person.id)
   person: Person;
 }

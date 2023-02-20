@@ -80,7 +80,7 @@ export class AdminScene {
           'survey.webLink as "Ссылка"',
           'survey.comment as "Коментарий"',
           'survey.tgUsernameForConnect as "ТгПриЗаполнение"',
-          'DATE(TO_CHAR(person.createdAt, \'DD.MM.YYYY\')) as "ПервыйВходВБота"',
+          'TO_CHAR(survey.createdAt, \'DD.MM.YYYY\') as "датаАнкеты"',
         ])
         .getRawMany();
 

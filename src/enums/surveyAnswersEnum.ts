@@ -7,4 +7,6 @@ export enum SurveyAnswersEnum {
   comment = 'Комментарий',
   tgUsernameForConnect = 'Телеграм',
   id = 'Номер анкеты',
+  createdAt = 'Дата заполненя',
+
 }

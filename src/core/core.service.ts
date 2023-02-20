@@ -47,7 +47,7 @@ export class CoreService {
         await ctx.reply(GREET_OLD_USER(incomeUser.first_name), startingButtions());
       }
     } catch (e) {
-      await ctx.telegram.sendMessage(ADMINS_IDS.MAKS_ID, `У кого то баганул бот${ctx.from.id}`);
+      await ctx.telegram.sendMessage(ADMINS_IDS.MAKS_ID, `У кого то баганул бот ${ctx.from.id}`);
       await ctx.reply('Увы что то пошло не так, попробуй нажать на копки в меню или написать /start');
     }
   }
@@ -56,7 +56,7 @@ export class CoreService {
     try {
       await ctx.replyWithHTML('<b>Можешь найти меня тут:</b>', linksInlineButtons());
     } catch (e) {
-      await ctx.telegram.sendMessage(ADMINS_IDS.MAKS_ID, `У кого то баганул бот${ctx.from.id}`);
+      await ctx.telegram.sendMessage(ADMINS_IDS.MAKS_ID, `У кого то баганул бот ${ctx.from.id}`);
       await ctx.reply('Увы что то пошло не так, попробуй нажать на копки в меню или написать /start');
     }
   }
@@ -65,7 +65,7 @@ export class CoreService {
     try {
       await ctx.reply('Бота сделал MGTTRN\nПо всем вопросам\n\n➡️@antianti_eva⬅️\n\nВ случае ошибок тоже сюда(:');
     } catch (e) {
-      await ctx.telegram.sendMessage(ADMINS_IDS.MAKS_ID, `У кого то баганул бот${ctx.from.id}`);
+      await ctx.telegram.sendMessage(ADMINS_IDS.MAKS_ID, `У кого то баганул бот ${ctx.from.id}`);
       await ctx.reply('Увы что то пошло не так, попробуй нажать на копки в меню или написать /start');
     }
   }
@@ -74,7 +74,7 @@ export class CoreService {
     try {
       await ctx.reply('Бот тебя не понимает...\n\nПопробуй нажать на клавиши в меню.\n\nЕсли что-то не работает или ты видишь это собщение снова попробуй написать /start');
     } catch (e) {
-      await ctx.telegram.sendMessage(ADMINS_IDS.MAKS_ID, `У кого то баганул бот${ctx.from.id}`);
+      await ctx.telegram.sendMessage(ADMINS_IDS.MAKS_ID, `У кого то баганул бот ${ctx.from.id}`);
       await ctx.reply('Увы что то пошло не так, попробуй нажать на копки в меню или написать /start');
     }
   }

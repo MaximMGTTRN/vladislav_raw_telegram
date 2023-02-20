@@ -238,7 +238,7 @@ export class SurveyCreateScene {
         }
 
         case 666: {
-          currentSurvey.tgUsernameForConnect = messageText.toString();
+          currentSurvey.tgUsernameForConnect = `РУЧНОЙВВОД ${messageText.toString()}`;
           cachedUser.surveyStage = 7;
           await this.cacheManager.set(userTgId, cachedUser);
           await this.finalResult(userTgId, ctx);
@@ -367,6 +367,7 @@ export class SurveyCreateScene {
 
       const { currentSurvey } = cachedUser;
       currentSurvey.person = user;
+      currentSurvey.createdAt = new Date();
       const savedSurvey = await this.surveyRep.save(currentSurvey);
 
       if (!savedSurvey) {
@@ -378,7 +379,7 @@ export class SurveyCreateScene {
 
       const surveyAnswers = Object.entries(cachedUser.currentSurvey);
 
-      await ctx.telegram.sendMessage(ADMINS_IDS.MAKS_ID,
+      await ctx.telegram.sendMessage(ADMINS_IDS.VLAD_ID,
         `Кто-то заполнил анкету:\n${surveyAnswers.map((answer) => {
           const answerKey = answer[0];
 
