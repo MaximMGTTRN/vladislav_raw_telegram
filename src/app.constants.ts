@@ -1,1 +1,1 @@
-export const GreeterBotName = 'mgttrn';
+export const GreeterBotName = 'redrawjpg';
